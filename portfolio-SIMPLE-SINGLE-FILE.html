@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jennifer Humphreys - Instructional Designer specializing in human-centered design and behavioral change learning">
+    <title>Jennifer Humphreys | Instructional Designer</title>
+    <style>
+        :root {
+            --deep-teal: #2C5F6F;
+            --sage-green: #8E9B7A;
+            --navy-blue: #1C3D5A;
+            --warm-cream: #FAF9F6;
+            --charcoal: #2A2A2A;
+            --mid-gray: #5A5A5A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--charcoal);
+            line-height: 1.7;
+            background-color: var(--warm-cream);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy-blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--deep-teal);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--navy-blue) 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Section */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-white {
+            background-color: white;
+        }
+
+        .section-cream {
+            background-color: var(--warm-cream);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .headshot-wrapper {
+            width: 100%;
+        }
+
+        .headshot {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(44, 95, 111, 0.15);
+        }
+
+        .about-content h2 {
+            color: var(--navy-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category h3 {
+            color: var(--deep-teal);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        /* Credentials */
+        .credentials-hero {
+            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--sage-green) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .star-badge {
+            width: 280px;
+            height: 280px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .credential-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .credential-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(44, 95, 111, 0.2);
+        }
+
+        .credential-badge {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--deep-teal), var(--navy-blue));
+            border-radius: 50%;
+        }
+
+        .credential-card h3 {
+            color: var(--navy-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(44, 95, 111, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--deep-teal), var(--sage-green));
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-format {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--sage-green);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-method {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-method h3 {
+            color: var(--deep-teal);
+            margin-top: 1rem;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--deep-teal);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--navy-blue);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy-blue);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hide/Show Pages */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('about'); return false;">Jennifer Humphreys | Instructional Designer</a>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link" onclick="showPage('about'); return false;">About Me</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('credentials'); return false;">Credentials</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('projects'); return false;">Featured Projects</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('contact'); return false;">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Page -->
+    <div id="about" class="page active">
+        <div class="hero">
+            <div class="container">
+                <h1>About Me</h1>
+                <p>Instructional Designer who blends structure, research, and creative problem-solving to support real-world performance</p>
+            </div>
+        </div>
+
+        <section class="section section-white">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="headshot-wrapper">
+                        <div style="width: 300px; height: 350px; background: linear-gradient(135deg, var(--deep-teal), var(--sage-green)); border-radius: 8px;"></div>
+                    </div>
+                    <div class="about-content">
+                        <h2>Hello! I'm Jennifer</h2>
+                        <p>I am an <strong>Instructional Designer</strong> focused on <strong>clarity, relevance, and practical outcomes</strong>. I design digital and instructor-led learning with an emphasis on strong structure, aligned objectives, and collaboration across teams.</p>
+                        
+                        <p>I bring more than a decade of experience supporting learners and facilitators across nonprofit and community-based education settings. That background shapes how I approach analysis, decision-making, and learner support in real-world contexts.</p>
+                        
+                        <p>My work begins with a clear understanding of the audience, their goals, constraints, and environment. I use research, data, and existing materials to identify motivation patterns and knowledge gaps, then synthesize learning solutions using evidence-based instructional strategies, simulations, and iterative feedback.</p>
+                    </div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Core Competencies</h3>
+                        <ul>
+                            <li>Needs Analysis & Audience Research</li>
+                            <li>ADDIE & SAM Frameworks</li>
+                            <li>Scenario-Based Learning</li>
+                            <li>Performance Support Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Design Tools</h3>
+                        <ul>
+                            <li>Articulate Storyline 360</li>
+                            <li>Articulate Rise 360</li>
+                            <li>Canva & Figma</li>
+                            <li>Google Workspace</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul>
+                            <li>HTML/CSS Basics</li>
+                            <li>LMS Integration</li>
+                            <li>SCORM Packages</li>
+                            <li>Accessibility (WCAG 2.1)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Credentials Page -->
+    <div id="credentials" class="page">
+        <div class="credentials-hero">
+            <div class="container">
+                <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Credentials & Certifications</h1>
+                <p style="color: white; font-size: 1.25rem;">IDOL Academy Star Student & Certified Professional in Training and Performance (In Progress)</p>
+                <div class="star-badge">
+                    <div style="font-size: 4rem;">⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section section-white">
+            <div class="container">
+                <div class="credentials-grid">
+                    <div class="credential-card">
+                        <div class="credential-badge"></div>
+                        <h3>Instructional Designer</h3>
+                        <p>IDOL Academy certification in core instructional design principles and ADDIE framework</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-badge"></div>
+                        <h3>Learning Architect</h3>
+                        <p>Advanced certification in learning architecture and program design</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-badge"></div>
+                        <h3>LXD Designer</h3>
+                        <p>Learning Experience Design focused on user-centered approaches</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-badge"></div>
+                        <h3>Visual Designer</h3>
+                        <p>Visual design principles for effective learning materials</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-badge"></div>
+                        <h3>Rapid Prototyping</h3>
+                        <p>Rapid eLearning prototyping and iterative development</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-badge"></div>
+                        <h3>ILT Design</h3>
+                        <p>Instructor-led training design for virtual and in-person contexts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Projects Page -->
+    <div id="projects" class="page">
+        <div class="hero">
+            <div class="container">
+                <h1>Featured Projects</h1>
+                <p>A selection of my recent instructional design work showcasing diverse approaches and deliverables</p>
+            </div>
+        </div>
+
+        <section class="section section-white">
+            <div class="container">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <span class="project-format">eLearning Course</span>
+                            <h3>eLearning Development</h3>
+                            <p>Interactive self-paced course built in Articulate Storyline helping users interrupt catastrophic thinking through scenario-based learning.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, var(--navy-blue), var(--deep-teal));"></div>
+                        <div class="project-content">
+                            <span class="project-format">Live Training Session</span>
+                            <h3>Instructor-Led Training</h3>
+                            <p>Facilitator-led workshop with slide deck, facilitator guide, and participant materials for recognizing and shifting catastrophic thought patterns.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, var(--sage-green), #a8b89a);"></div>
+                        <div class="project-content">
+                            <span class="project-format">Storyboard & Prototype</span>
+                            <h3>Storyboarding</h3>
+                            <p>Detailed storyboard with scripting, visuals, and interaction notes for a modular eLearning experience focused on cognitive reframing.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, #2a4d63, var(--navy-blue));"></div>
+                        <div class="project-content">
+                            <span class="project-format">Analysis & Strategy</span>
+                            <h3>Needs Analysis</h3>
+                            <p>Comprehensive needs analysis and design strategy documenting learner constraints, organizational goals, and instructional approach.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="hero">
+            <div class="container">
+                <h1>Let's Connect</h1>
+                <p>I'm currently open to instructional design opportunities, particularly roles focused on human-centered design, behavioral change learning, and performance improvement.</p>
+            </div>
+        </div>
+
+        <section class="section section-white">
+            <div class="container">
+                <p style="text-align: center; font-size: 1.125rem; margin-bottom: 3rem;">I'd love to hear about projects where strategic analysis and learner-focused design can drive real results. Feel free to reach out!</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div style="font-size: 3rem;">📧</div>
+                        <h3>Email</h3>
+                        <p>your.email@example.com</p>
+                    </div>
+                    <div class="contact-method">
+                        <div style="font-size: 3rem;">💼</div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect with me</p>
+                    </div>
+                    <div class="contact-method">
+                        <div style="font-size: 3rem;">📍</div>
+                        <h3>Location</h3>
+                        <p>Atlanta, Georgia</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#" class="btn" onclick="showPage('projects'); return false;">View My Work</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Jennifer Humphreys. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
